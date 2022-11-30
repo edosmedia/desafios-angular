@@ -7,21 +7,29 @@
       </tr>
     </thead>
 
-    <tbody *ngFor="let item of lista">
-      <tr>
+    <tbody *ngIf="resultado; else defecto">
+      <tr *ngFor="let item of resultado">
         <td>{{item.nombre}}</td>
         <td>{{item.nota}}</td>
       </tr>
     </tbody>
+
+    <ng-template #defecto>
+      <tbody>
+        <tr *ngFor="let item of lista" >
+          <td>{{item.nombre}}</td>
+          <td>{{item.nota}}</td>
+        </tr>
+      </tbody>
+    </ng-template>
+
   </table>
 
   <br>
   <br>
   <div class="text-center">
-      <button (click)="apr()" class="btn btn-success m-5">Aprobaron</button>
-      <button (click)="reset()" class="btn btn-secondary m-5">Resetear</button>
-      <button (click)="repro()" class="btn btn-danger m-5">Reprobaron</button> 
+    <button (click)="apr()" class="btn btn-success m-5">Aprobaron</button>
+    <button (click)="reset()" class="btn btn-secondary m-5">Resetear</button>
+    <button (click)="repro()" class="btn btn-danger m-5">Reprobaron</button>
   </div>
 </div>
-
-
