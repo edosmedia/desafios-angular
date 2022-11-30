@@ -33,29 +33,23 @@ export class ListaComponent implements OnInit {
       nota: 75,
     },
   ];
-  public resultado = [{}];
+  public resultado: any;
   ngOnInit(): void {}
- 
+
   apr = () => {
-    if (this.lista) {
-         this.lista = this.lista.filter((e) => e.nota > 50);
-    }else {
-       location.reload();
-    }
- return this.lista;
+      this.resultado = this.lista.filter((e) => e.nota > 50);
+/*       console.log(this.resultado + "resultado");
+       console.log(this.lista + 'lista'); */
+    return this.resultado;
   };
   repro = () => {
-
-        if (this.lista) {
-          this.lista = this.lista.filter((e) => e.nota < 50);
-          console.trace(this.lista);
-          return this.lista;
-        } else {
-          location.reload();
-        }
-    return this.lista;
+      this.resultado = this.lista.filter((e) => e.nota < 50);
+      return this.resultado;
   };
   reset = () => {
-    location.reload();
+    this.resultado = "";
   };
+
+ 
+  
 }
