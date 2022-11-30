@@ -47,7 +47,7 @@ export class ListaComponent implements OnInit {
       return this.resultado;
   };
   reset = () => {
-    location.reload();
+    this.resultado = "";
   };
 
  
