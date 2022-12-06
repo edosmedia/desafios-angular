@@ -1,4 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    background-image: url("/../../../assets/img/bg/bg-01.png") !important;
+    background-repeat: repeat-x;
+    position: relative;
+    transform: translate(0%, 0%);
+    background-position: 0% 0%;
+    animation: fondomovi 60s infinite;
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    margin: 0;
+    font-family: Roboto,   "Helvetica Neue", sans-serif;
+    -webkit-transform: translate(0%, 0%);
+    -moz-transform: translate(0%, 0%);
+    -ms-transform: translate(0%, 0%);
+    -o-transform: translate(0%, 0%);
+}
+
+@keyframes fondomovi {
+  0% {
+   background-position: 0% 0%
+  }
+  100% {
+    background-position: 200% 0%
+  }
+}
+
