@@ -2,29 +2,23 @@
 
 html, body { height: 100%; }
 body {
-    background-image: url("/../../../assets/img/bg/bg-01.png") !important;
-    background-repeat: repeat-x;
+    background: url("/../../../assets/img/bg/bg-01.png") repeat-x;
     position: relative;
-    transform: translate(0%, 0%);
-    background-position: 0% 0%;
-    animation: fondomovi 60s infinite;
+    animation: fondomovi linear 120s infinite;
     left: 0;
     top: 0;
     overflow: hidden;
     margin: 0;
     font-family: Roboto,   "Helvetica Neue", sans-serif;
-    -webkit-transform: translate(0%, 0%);
-    -moz-transform: translate(0%, 0%);
-    -ms-transform: translate(0%, 0%);
-    -o-transform: translate(0%, 0%);
+    -webkit-animation: fondomovi linear 120s infinite;
 }
 
 @keyframes fondomovi {
   0% {
-   background-position: 0% 0%
+   background-position: 0px 0;
   }
   100% {
-    background-position: 200% 0%
+    background-position: 1920px 0;
   }
 }
 

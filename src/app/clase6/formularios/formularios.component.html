@@ -1,36 +1,64 @@
-<div class="container form-container" >
-<div class="row">
-  <div class="col-md-5 ">
-    <form [formGroup]="formularioPrincipal" (ngSubmit)="submit()" class="p-20">
-    <h1>Datos Registro</h1>
-      <div class="form-group mb-4">
-        <label for="nombre">Nombres</label>
-        <input type="text" class="form-control" formControlName="nombre" placeholder="Tu Nombre" id="nombre">
-  
-      </div>
-  
-      <div class="form-group mb-4">
-        <label for="apellido">Apellido</label>
-        <input type="text" class="form-control" formControlName="apellido" id="apellido" placeholder="Tus Apellidos">
-      </div>
-  
-      <div class="form-group mb-4">
-        <label for="email">Email</label>
-        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Tu Correo Electronico">
-        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-      </div>
-      <div class="form-group mb-4">
-        <label for="exampleInputPassword1">Contraseña</label>
-        <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1"
-          placeholder="Password">
-      </div>
+<div class="container form-container shadow">
+  <div class="row">
+    <div class="col-md-5 ">
+      <form [formGroup]="formularioPrincipal" (ngSubmit)="submit()" class="p-20">
+        <h1>Datos Registro</h1>
+        <div class="form-group mb-4">
+          <label for="nombre">Nombres</label>
+          <input type="text" class="form-control" formControlName="nombre" placeholder="Tu Nombre" id="nombre">
 
-        <button type="submit" class="btn btn-primary w-100">Registrarse</button>
-    </form>
+
+        </div>
+
+        <div class="form-group mb-4">
+          <label for="apellido">Apellido</label>
+          <input type="text" class="form-control" formControlName="apellido" id="apellido" placeholder="Tus Apellidos">
+
+        </div>
+
+        <div class="form-group mb-4">
+          <label for="email">Email</label>
+          <input type="email" class="form-control" id="email" formControlName="email"
+            placeholder="Tu Correo Electronico">
+
+
+        </div>
+        <div class="form-group mb-4">
+          <label for="exampleInputPassword1">Contraseña</label>
+          <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1"
+            placeholder="Password">
+
+        </div>
+        <!-- Notificaciones -->
+        <small class="d-block" [ngClass]="formularioPrincipal.invalid && formularioPrincipal.touched  ? 'd-block' : 'd-none'"
+          class=" text-danger font-weight-bold">Errores de Campos</small>
+        <div >
+          <small 
+            *ngIf="formularioPrincipal.controls['nombre']?.value.length<3 && (formularioPrincipal.controls['nombre']?.dirty || formularioPrincipal.controls['nombre']?.touched)"
+            class="form-text text-danger d-block"><span class="iconify" data-width="32" data-icon="ph:smiley-x-eyes" style="color: red; "></span>Introducir Nombre o Mayor a 3 Caracteres
+          </small>
+
+          <small
+            *ngIf="formularioPrincipal.controls['apellido']?.value.length<3 && (formularioPrincipal.controls['apellido']?.dirty || formularioPrincipal.controls['apellido']?.touched)"
+            class="form-text text-danger d-block"><span class="iconify" data-width="32" data-icon="ph:smiley-x-eyes" style="color: red;"></span>Introducir Nombre o Mayor a 3 Caracteres</small>
+      
+          <small 
+            *ngIf="formularioPrincipal.controls['email']?.invalid && (formularioPrincipal.controls['email']?.dirty || formularioPrincipal.controls['email']?.touched)"
+            id="emailHelp" class="form-text text-danger d-block"><span class="iconify"  data-width="32" data-icon="ph:smiley-x-eyes" style="color: red;"></span>Introducir un Correo Valido</small>
+          <small 
+            *ngIf="formularioPrincipal.controls['password']?.invalid && (formularioPrincipal.controls['password']?.touched || formularioPrincipal.controls['password']?.dirty)"
+            class="form-text text-danger d-block">
+            <span class="iconify" data-icon="ph:smiley-x-eyes"  data-width="32" style="color: red;"></span>Introducir un Password Valido</small>
+        </div>
+        <!-- END Notificaciones -->
+        <button [disabled]="formularioPrincipal.invalid  " type="submit"
+          class="btn btn-primary w-100">Registrarse</button>
+
+      </form>
+    </div>
+    <div class="col-md-7">
+      <img src="/../../../assets/img/images-ramdom/teclado.jpg" alt="">
+    </div>
   </div>
-  <div class="col-md-7">
-    <img src="/../../../assets/img/images-ramdom/teclado.jpg" alt="">
-  </div>
-</div>
 
 </div>
