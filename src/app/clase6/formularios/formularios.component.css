@@ -40,3 +40,7 @@ img {
   border-top-right-radius : 10px;
   border-bottom-right-radius: 10px
 }
+
+label {
+  font-weight: 500;
+}
